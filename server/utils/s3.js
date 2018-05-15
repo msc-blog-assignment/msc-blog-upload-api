@@ -1,3 +1,5 @@
+'use strict';
+
 const {extname} = require('path');
 const {readFileSync} = require('fs');
 const AWS = require('aws-sdk');
@@ -24,7 +26,6 @@ AWS.config.update(awsConfig);
 const s3 = new AWS.S3({});
 
 const uploadFileToS3 = (file = {}) => {
-
   // turn the file into a buffer for uploading
   const buffer = readFileSync(file.path);
 
@@ -37,7 +38,7 @@ const uploadFileToS3 = (file = {}) => {
       Bucket: bucket,
       ACL: 'public-read',
       Key: `${uuid()}${extension}`,
-      Body: buffer,
+      Body: buffer
     }, (err, result) => {
       err ? reject(err) : resolve(result);
     });
@@ -46,4 +47,4 @@ const uploadFileToS3 = (file = {}) => {
 
 module.exports = {
   uploadFileToS3
-}
+};

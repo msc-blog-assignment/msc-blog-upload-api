@@ -1,3 +1,5 @@
+'use strict';
+
 const multiparty = require('multiparty');
 const _ = require('lodash');
 

@@ -1,14 +1,12 @@
 'use strict';
 
 let {getFileFromRequest} = require('../utils/upload');
-let {uploadFileToS3} = require('../utils/s3');
 
 module.exports = Upload => {
   Upload.upload = (userId, req, next) => {
     let uploadedFile = Upload.app.models.UploadedFile;
 
     getFileFromRequest(req)
-      .then((file) => uploadFileToS3(file))
       .then((file) => {
         uploadedFile.create({
           userId,

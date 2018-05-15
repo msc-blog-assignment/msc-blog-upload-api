@@ -1,0 +1,11 @@
+{
+  "extends": "loopback",
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "max-len": [0],
+    "space-before-function-paren": [0]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "upload",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "validations": [],
+  "relations": {
+  },
+  "methods": {}
+}

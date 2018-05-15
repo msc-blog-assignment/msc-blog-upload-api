@@ -21,11 +21,11 @@
     "dataSource": "db",
     "public": false
   },
-  "comment": {
-    "dataSource": "db",
+  "upload": {
+    "dataSource": null,
     "public": true
   },
-  "response": {
+  "uploaded-file": {
     "dataSource": "db",
     "public": true
   }

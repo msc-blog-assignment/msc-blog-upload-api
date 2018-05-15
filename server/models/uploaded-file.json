@@ -1,6 +1,6 @@
 {
-  "name": "response",
-  "plural": "responses",
+  "name": "uploaded-file",
+  "plural": "uploaded-files",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -12,23 +12,23 @@
       "type": "string",
       "defaultFn": "uuid"
     },
-    "createdAt": {
-      "type": "date",
+    "createdAt":{
+      "type" : "date",
       "defaultFn": "now"
     },
-    "userId": {
+    "link": {
       "type": "string",
       "required": true
     },
-    "articleId": {
+    "etag": {
       "type": "string",
       "required": true
     },
-    "commentId": {
+    "bucket": {
       "type": "string",
       "required": true
     },
-    "response": {
+    "key": {
       "type": "string",
       "required": true
     }

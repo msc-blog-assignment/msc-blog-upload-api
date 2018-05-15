@@ -1,0 +1,9 @@
+name: msc-blog-comments-api
+instances: 1
+memory: 128M
+buildpack: nodejs_buildpack
+command: node ./server/server.js
+services:
+  - consul-service-discovery
+env:
+    OPTIMIZE_MEMORY : true

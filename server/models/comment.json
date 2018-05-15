@@ -1,0 +1,36 @@
+{
+  "name": "comment",
+  "plural": "comments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "defaultFn": "uuid"
+    },
+    "createdAt":{
+      "type" : "date",
+      "defaultFn": "now"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "articleId": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "methods": {}
+}

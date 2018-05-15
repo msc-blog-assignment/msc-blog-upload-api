@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  consul:
+    image: mscblog/consul:latest
+    ports:
+      - 5300:8080
+    networks:
+      main:
+        aliases:
+          - mscblog-consul
+
+networks:
+  main:

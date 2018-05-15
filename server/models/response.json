@@ -1,0 +1,40 @@
+{
+  "name": "response",
+  "plural": "responses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "defaultFn": "uuid"
+    },
+    "createdAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "articleId": {
+      "type": "string",
+      "required": true
+    },
+    "commentId": {
+      "type": "string",
+      "required": true
+    },
+    "response": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "methods": {}
+}

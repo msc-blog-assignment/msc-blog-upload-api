@@ -10,9 +10,9 @@
     "lint": "eslint .",
     "start": "cross-env HOSTNAME=localhost SERVICE_DISCOVERY_HOST=localhost SERVICE_DISCOVERY_PORT=5300 node .",
     "test": "exit 0",
-    "docker": "docker build -t mscblog/comments-api .",
-    "docker:tag": "docker tag mscblog/comments-api mscblog/comments-api",
-    "docker:push": "docker push mscblog/comments-api"
+    "docker": "docker build -t mscblog/upload-api .",
+    "docker:tag": "docker tag mscblog/upload-api mscblog/upload-api",
+    "docker:push": "docker push mscblog/upload-api"
   },
   "dependencies": {
     "cfenv": "^1.0.4",

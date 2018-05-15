@@ -12,9 +12,13 @@
       "type": "string",
       "defaultFn": "uuid"
     },
-    "createdAt":{
-      "type" : "date",
+    "createdAt": {
+      "type": "date",
       "defaultFn": "now"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
     },
     "link": {
       "type": "string",

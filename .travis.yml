@@ -17,6 +17,7 @@ deploy:
     space: dev
     on:
       repo: msc-blog-assignment/msc-blog-upload-api
+      branch: master
   - provider: script
     script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && yarn docker:tag && yarn docker:push
     on:

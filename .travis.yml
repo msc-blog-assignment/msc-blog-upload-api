@@ -7,3 +7,17 @@ install:
 - npm i
 - npm run lint
 - npm run docker
+deploy:
+  - provider: cloudfoundry
+    api: https://api.system.titan.lab.emc.com
+    username: david.ahern26@gmail.com
+    password:
+      secure: iAOsrAUDQl/DnQaFoH8Wjz4lX7u49YJuayEvf9xS4vPeMsEwwm7cvkQXvrt9icYnIeOO/tQbkIlQdJH5RK+m0nRpUlw209HA7PQN4teEsmv1X0xUZywGGjpnTXeOwyt93uQNI3Ob+a3ZzfjqtanDXv0z7K4WYOLyh58DpxzU1jWjL4CdzccrsgENmMqfPQKFEoljpaagULwccegQFN2RAf8ZVF+9pz0p4UArUFJJB171M38goBLQAR4Mby4y/aSO9I23wOVwXmU5P4czWkpkfiZ3TejQ5WnxdoOWnzWIB17sTt6CeqEqd1nJHii4fDBZtUwMa3s5p27kdJ0Gcnips6GQST/Jr8HgZwt1+cGf1EcEO79g4hx/WpNwhIUmG8sg/eCLX7/SARkNHGjh1JNezurI7MNG3sA2kD1m8/D9j8dpAgqJ20I7xSEnuk7jGDc2Pe7A5LGZhn4yV8X8MaBm3/rLmTANvm5mqX7/tQsJDrSJao2Rxm7uxH7AWzSrJIASM7IlPP454C1oIUTtgKu3KsAbRDP2/12i3tKxNYOpIZabmd/aaRTraMn4jpgRrPjSPzUT/JcAXAnHqIt9S1o75RH4chwbWUmyTu3mnQRKvojKqOToeuH9eN25pnTBX/NWM6uNbonQqKRXjZwKA1TALTvcN84/Jr2/wqwrTiQ4Kv0=
+    organization: thor
+    space: dev
+    on:
+      repo: msc-blog-assignment/msc-blog-upload-api
+  - provider: script
+    script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && yarn docker:tag && yarn docker:push
+    on:
+      branch: master

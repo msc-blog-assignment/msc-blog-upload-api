@@ -11,5 +11,10 @@ services:
         aliases:
           - mscblog-consul
 
+  fakes3:
+    image: lphoward/fake-s3
+    ports:
+      - "4569:4569"
+
 networks:
   main:

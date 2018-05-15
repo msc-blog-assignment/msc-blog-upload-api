@@ -8,9 +8,7 @@ module.exports = Upload => {
     let uploadedFile = Upload.app.models.UploadedFile;
 
     getFileFromRequest(req)
-      .then((file) => {
-        return uploadFileToS3(file)
-      })
+      .then((file) => uploadFileToS3(file))
       .then((file) => {
         uploadedFile.create({
           link: file.Location,
@@ -20,7 +18,8 @@ module.exports = Upload => {
         }, (err, file) => {
           next(err, file);
         });
-      });
+      })
+      .catch((err) => next(err, 'Unable to upload to s3'));
   };
 
   Upload.sharedClass.methods().forEach(method => {

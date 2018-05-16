@@ -47,6 +47,10 @@ const getFileFromRequest = (req) => new Promise((resolve, reject) => {
     }
   });
 
+  form.on('error', (err) => {
+    reject(err);
+  });
+
   form.parse(req);
 });
 
